@@ -1,4 +1,4 @@
-﻿# Powershell Gallery PowerCLI modullerini yukluyoyuruz
+﻿# Powershell Gallery PowerCLI modullerini yukluyoruz
 Import-Module VMware.PowerCLI
 
 #userName değişkeni içerisine login olan kullanıcı adımızı alıyoruz
@@ -14,7 +14,7 @@ Connect-VIServer -Server $vcenterIP
 clear
 
 $vlanID = Read-Host -Prompt "Vland ID Giriniz"
-$vlanID
+
 
 $Switch = Get-VDSwitch | Get-VirtualPortGroup | Select *, @{N="vlanID";E={$_.Extensiondata.Config.DefaultPortCOnfig.Vlan.VlanId}} | Where VLANId -EQ $vlanID
 
